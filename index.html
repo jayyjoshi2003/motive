@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Pushing</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            font-size: 64px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+            transition: transform 0.3s ease-in-out;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        .text:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .popup-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .text:hover .popup-text {
+            display: block;
+            border: 2px solid black;
+            border-radius: 30%;
+            background-color: rgb(3, 83, 140);
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 400% 400%;
+            animation: move 60s linear infinite;
+            transition: filter 0.3s ease-in-out;
+        }
+
+        .background-animation:hover {
+            filter: brightness(1.2);
+        }
+
+        @keyframes move {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .background-animation {
+                animation: move-mobile 30s linear infinite;
+            }
+
+            @keyframes move-mobile {
+                0% {
+                    background-position: 0% 50%;
+                }
+
+                100% {
+                    background-position: 100% 50%;
+                }
+            }
+        }
+
+        .first-color {
+            background: #ececec;
+        }
+
+        .second-color {
+            background: #9fd3c7;
+        }
+
+        .third-color {
+            background: #385170;
+        }
+
+        .fourth-color {
+            background: #142d4c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-animation third-color">
+        <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+            <div class="text" style="color: #000; background-color: #385170; padding: 20px; margin: 0 auto;">
+                🧠🚀 Keep Pushing! 🧠🚀
+                <div class="popup-text">You got this!💯</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
